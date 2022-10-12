@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'mydb'
+      MYSQL_USER: 'johndoe'
+      MYSQL_PASSWORD: 'randompassword'
+      MYSQL_ROOT_PASSWORD: 'randompassword'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
